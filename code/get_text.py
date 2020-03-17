@@ -6,6 +6,9 @@
 # y.txt - each 24 lines is the output array
 #! /usr/bin/python3
 
+# change if want more examples in the dataset, also need to change in test_vggpy.py
+num_examples = 100000
+
 import h5py
 import sys
 import numpy as np
@@ -61,13 +64,13 @@ if __name__ == "__main__":
     prefix = dirname + "/" + args.rcrd_prefix
     i = 0
     examples = []
-    lower , upper = 0 , 100
+    lower , upper = 0 , num_examples
     for x, y, snr in zip( f["X"], f["Y"], f["Z"] ):
         if (i>=lower) and (len(x.tolist())==1024):
             ex = [x.astype('float'),y.astype('float'),snr.astype('float')]
             examples.append([ex])
         i+=1
-        if(i==upper):
+        if(i==num_examples):
             break
     output = np.array(examples)
     np.random.shuffle( output )

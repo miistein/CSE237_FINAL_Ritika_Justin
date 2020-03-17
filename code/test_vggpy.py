@@ -21,11 +21,14 @@ for i in range(examples):
     
     preds = np.argmax( y ) 
 
+    # note that the format for the dataset gives 24 modulation scheme.
+    # the format is like follows
+    # the correct_ys will have a 1 where the modulation scheme is
+    # preds will be largest where the modulation scheme is
+    # thus, there is no overlap and if the 1 in correct_ys is out of bounds the prediction will always be wrong
     correct_ys = np.loadtxt('Y.txt')[i*24:(i+1)*24]
 
     correct_ys = np.argmax(correct_ys)
-
-    print(correct_ys, preds)
 
     snr = np.loadtxt('SNR.txt')[i]
 
