@@ -1,0 +1,9 @@
+localparam BN4_CH = 64;
+localparam BN4_BW_A = 7;
+localparam BN4_BW_B = 17;
+localparam BN4_RSHIFT = 8;
+localparam BN4_BW_IN = 16;
+localparam BN4_BW_OUT = 16;
+localparam BN4_MAXVAL = -1;
+reg [BN4_CH-1:0][BN4_BW_A-1:0] bn4_a = { 7'h30, 7'h2b, 7'h29, 7'h34, 7'h31, 7'h34, 7'h2b, 7'h35, 7'h33, 7'h26, 7'h23, 7'h31, 7'h27, 7'h36, 7'h30, 7'h37, 7'h23, 7'h2c, 7'h31, 7'h39, 7'h32, 7'h32, 7'h30, 7'h37, 7'h34, 7'h29, 7'h2d, 7'h27, 7'h30, 7'h2a, 7'h2c, 7'h29, 7'h25, 7'h31, 7'h28, 7'h28, 7'h21, 7'h29, 7'h26, 7'h30, 7'h34, 7'h2e, 7'h29, 7'h29, 7'h32, 7'h29, 7'h29, 7'h39, 7'h28, 7'h30, 7'h39, 7'h23, 7'h1f, 7'h2f, 7'h24, 7'h26, 7'h2b, 7'h22, 7'h2b, 7'h32, 7'h35, 7'h39, 7'h36, 7'h2c };
+reg [BN4_CH-1:0][BN4_BW_B-1:0] bn4_b = { 17'h1ceef, 17'h00566, 17'h1d7ae, 17'h1fe51, 17'h1c8c8, 17'h1cf7f, 17'h0322c, 17'h1bd3f, 17'h1d2a0, 17'h1e1ef, 17'h1c5a7, 17'h1af49, 17'h1a6cf, 17'h01d72, 17'h02ca0, 17'h1cc37, 17'h1d94e, 17'h050a0, 17'h185b5, 17'h1f8da, 17'h1bd9d, 17'h0095d, 17'h1fb9c, 17'h1fcc3, 17'h1bd6f, 17'h1ffc5, 17'h1d876, 17'h1c19b, 17'h1fc0d, 17'h04be9, 17'h030b0, 17'h015f4, 17'h1c661, 17'h1f554, 17'h00ba5, 17'h18443, 17'h1cbe5, 17'h1c41c, 17'h01acc, 17'h1f11a, 17'h1f8a2, 17'h1e85e, 17'h1cc87, 17'h1e299, 17'h1e212, 17'h1b509, 17'h00128, 17'h1eb0b, 17'h04b6a, 17'h04e69, 17'h1e09e, 17'h034a2, 17'h1d143, 17'h16fdf, 17'h1ba94, 17'h1b962, 17'h1ff0a, 17'h1f22b, 17'h1d14b, 17'h01efc, 17'h029a2, 17'h1d6d3, 17'h18b1c, 17'h02c3d };
