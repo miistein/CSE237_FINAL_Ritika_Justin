@@ -7,7 +7,7 @@
 #! /usr/bin/python3
 
 # change if want more examples in the dataset, also need to change in test_vggpy.py
-num_examples = 100000
+num_examples = 1000
 
 import h5py
 import sys
@@ -28,21 +28,6 @@ def get_example( x, y, snr, rcrd_prefix, rcrd_suffix ):
     example = tf.train.Example(features=tf.train.Features(feature=ftrs))
     return example.SerializeToString()
 
-def make_wrt( snr, rcrd_prefix, rcrd_suffix ):
-    return tf.python_io.TFRecordWriter( rcrd_prefix + str( snr ) + rcrd_suffix )
-
-def add_to_rcrd( ex, wrts, snr, rcrd_prefix, rcrd_suffix ):
-    if snr not in wrts:
-        wrts[snr] = make_wrt( snr, rcrd_prefix, rcrd_suffix )
-    wrt = wrts[ snr ]
-    wrt.write( ex )
-    return wrts
-
-def partition_dataset():
-    ary = np.array( ( [ True ] * 3686 ) + ( [ False ] * 410 ) )
-    np.random.shuffle( ary )
-    return ary
-
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument( "--dataset_file", type = str, required = True,
@@ -56,34 +41,36 @@ def get_args():
 if __name__ == "__main__":
     args = get_args()
     f = h5py.File( args.dataset_file, "r" )
-    dirname = os.path.dirname( args.dataset_file )
-    train_ex = []
-    partition = partition_dataset()
-    p_idx = 0
-    test_wrts = {}
-    prefix = dirname + "/" + args.rcrd_prefix
+
     i = 0
     examples = []
     lower , upper = 0 , num_examples
+
     for x, y, snr in zip( f["X"], f["Y"], f["Z"] ):
-        if (i>=lower) and (len(x.tolist())==1024):
-            ex = [x.astype('float'),y.astype('float'),snr.astype('float')]
-            examples.append([ex])
         i+=1
-        if(i==num_examples):
+        if(i==500000):
             break
+
+        if 1 not in y[0:4]:
+            continue
+
+        ex = [x.astype('float'),y.astype('float'),snr.astype('float')]
+        examples.append([ex])
+
+
     output = np.array(examples)
     np.random.shuffle( output )
+    output = output[:num_examples]
     with open("I.txt",'w') as f, open("Q.txt","w") as f2, open("Y.txt","w") as f3, open("SNR.txt","w") as f4:
         # has 4096, line contains x,y,snr. x is (1024,2) y is 24
         for i in range(upper-lower):
             line = output[i][0]
+            for k  in range(4):
+                f3.write(str(line[1][k]) + '\n')
+
             for j in range(1024):
                 f.write(str(line[0][j][0]) + '\n')
                 f2.write(str(line[0][j][1]) + '\n')
             
             f4.write(str(line[2][0]) + '\n')
-
-            for k  in range(24):
-                f3.write(str(line[1][k]) + '\n')
     print("finished writing text files")

@@ -8,8 +8,8 @@ from collections import defaultdict
 correct_snr = defaultdict(int)
 cntr_array = defaultdict(int)
 
-# tested against 1000 examples
-examples = 100
+# tested against 10000 examples
+examples = 1000
 for i in range(examples):
     i1 = i*1024
     i2 = (i+1)*1024
@@ -26,7 +26,7 @@ for i in range(examples):
     # the correct_ys will have a 1 where the modulation scheme is
     # preds will be largest where the modulation scheme is
     # thus, there is no overlap and if the 1 in correct_ys is out of bounds the prediction will always be wrong
-    correct_ys = np.loadtxt('Y.txt')[i*24:(i+1)*24]
+    correct_ys = np.loadtxt('Y.txt')[i*4:(i+1)*4]
 
     correct_ys = np.argmax(correct_ys)
 
