@@ -2,7 +2,7 @@
 1. Port the code to Vitis and write a testbench in Vitis to check functional correctness of the
 code. It should be very close in accuracy to the software neural network but will vary
 slightly due to variable precision and the optimizations we choose to take.
-Deliverable: A synthesizable design that is tested, along with .bit/.hwh files. [x]
+Deliverable: A synthesizable design that is tested, along with .bit/.hwh files. **[x]**
 
 We have Vitis_emulation/compute_network.xilinx_u200_xdma_201830_2.xclbin, which can be used to run on linux in emulation and on the **u200_xdma_201830_2** board.
 The Vitis_emulation/compute_network.xilinx_u200_xdma_201830_2.xo file is a kernel that can be compiled into any other Vitis project. This is easily portable to other boards, we chose this board because 
@@ -14,7 +14,7 @@ so that we could move on with the project. It is possible to use the ZCU111 boar
 optimizations) and use it to optimize the C code (already available) of real-time
 automatic modulation classification. 
 Deliverable: Optimized code, with a small outline of explored design space for use in the
-documentation. [x]
+documentation. **[x]**
 
 See Initial Implementation with Vitis HLS and Optimizing the design in Vitis HLS in Report.pdf
 
@@ -31,14 +31,14 @@ overview of any major adjustments we made to the code, the optimizations (and th
 tradeoffs) we tried in Vitis, and a readable ipynb demo.
 Deliverable: 2 README files in the github repo (one for Vitis code and another for
 optimizations), well commented code , and a ipynb demo that demonstrates the results in
-an easy to comprehend fashion. [x]
+an easy to comprehend fashion. **[x]**
 
 See Report.pdf. Setup.pdf reports the pit falls of Vitis as well, but it mainly focuses on how to get Vitis up and running.
 
 Mapping Milestones to final project grade:
 
 - Completing all milestones results in an A
-- Completing milestones 1, 2, and 4 results in an A- [x]
+- Completing milestones 1, 2, and 4 results in an A- **[x]**
 - Completing milestones 1 and 2 is a B+
 - Completing milestones 1 and 4 is a B 
 
