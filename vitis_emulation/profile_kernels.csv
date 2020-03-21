@@ -1,0 +1,44 @@
+Compute Units: Running Time and Stalls
+Compute Unit, Running Time (us), Intra-Kernel Dataflow Stalls (%), External Memory Stalls (%), External Stream Stalls (%)
+compute_network,2233.047,0.000,0.004,0.000
+
+Functions: Running Time and Stalls
+Compute Unit, Function, Running Time (us), Intra-Kernel Dataflow Stalls (%), External Memory Stalls (%), External Stream Stalls (%)
+compute_network,grp_dense1_fu_276,0.667,0.000,0.000,0.000
+compute_network,grp_dense2_fu_286,0.427,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_1_fu_294,827.926,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_1_fu_294/grp_conv2_fu_184,312.382,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_1_fu_294/grp_bn2_a_b_fu_193,109.249,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_1_fu_294/grp_window_data_1d_2_fu_200,343.109,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_2_fu_312,409.709,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_2_fu_312/grp_conv3_fu_181,152.777,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_2_fu_312/grp_bn3_a_b_fu_190,54.624,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_2_fu_312/grp_window_data_1d_2_1_fu_197,171.554,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_3_fu_330,204.014,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_3_fu_330/grp_conv4_fu_177,75.535,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_3_fu_330/grp_bn4_a_b_fu_186,27.312,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_3_fu_330/grp_window_data_1d_2_2_fu_193,85.777,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_4_fu_348,101.380,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_4_fu_348/grp_conv5_fu_177,36.061,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_4_fu_348/grp_bn5_a_b_fu_186,14.723,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_4_fu_348/grp_window_data_1d_2_3_fu_193,42.889,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_6_fu_366,24.842,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_6_fu_366/grp_conv7_fu_153,6.615,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_6_fu_366/grp_bn7_a_b_fu_162,3.681,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_6_fu_366/grp_window_data_1d_2_5_fu_169,10.722,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_5_fu_384,46.009,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_5_fu_384/grp_conv6_fu_181,13.336,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_5_fu_384/grp_bn6_a_b_fu_190,7.361,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_2_5_fu_384/grp_window_data_1d_2_4_fu_197,21.444,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_1_fu_402,611.822,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_1_fu_402/grp_bn1_a_b_fu_204,218.497,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_1_fu_402/grp_conv1_fu_211,119.491,0.000,0.000,0.000
+compute_network,grp_compute_conv_layer_1_fu_402/grp_window_data_1d_1_fu_220,147.489,0.000,3.241,0.000
+compute_network,grp_bnd2_a_b_fu_419,0.427,0.000,0.000,0.000
+compute_network,grp_bnd1_a_b_fu_425,0.427,0.000,0.000,0.000
+compute_network,grp_allocate_network_fu_431,1.767,0.000,0.000,0.000
+
+Compute Units: Port Data Transfer
+Compute Unit, Port, Write Time (us), Outstanding Write (%), Read Time (us), Outstanding Read (%)
+compute_network,m_axi_gmem,0.057,0.003,79.196,3.547
+
